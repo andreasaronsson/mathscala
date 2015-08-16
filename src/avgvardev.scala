@@ -1,5 +1,3 @@
-
-
 import scala.math._
 import scala.Array.canBuildFrom
 object AvgPlusVariance {
