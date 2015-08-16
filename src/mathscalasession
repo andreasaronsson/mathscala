@@ -1,0 +1,26 @@
+def changes(num: Int, orgDays:Int, newDays:Int): Int = {
+  num / orgDays * newDays
+}
+
+
+def div(taljare:Double, namnare:Double): Double = {
+  taljare / namnare
+}
+
+def gcd(a: Int, b: Int):Int=if (b==0) a.abs else gcd(b, a%b)
+
+def potency(taljare:Int, namnare:Int, pot:Int):(Int, Int) = {
+  println(s"t: $taljare n: $namnare p:$pot")
+  def acc(accTaljare: Int, accNamnare:Int, pot:Int):(Int, Int) = {
+    println(s"acct: $accTaljare accn: $accNamnare p:$pot")
+    if (pot == 1) {
+      val divideby = gcd(accTaljare, accNamnare)
+      (accTaljare / divideby, accNamnare / divideby)
+    } else {
+      acc(taljare * accTaljare, namnare * accNamnare, pot - 1)
+    }
+  }
+  acc(taljare, namnare, pot)
+}
+
+def divideFractions()
