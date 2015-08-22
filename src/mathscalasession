@@ -23,4 +23,14 @@ def potency(taljare:Int, namnare:Int, pot:Int):(Int, Int) = {
   acc(taljare, namnare, pot)
 }
 
-def divideFractions()
+def sumFractions(numeratorLeft:Int, denominatorLeft:Int, numeratorRight:Int, denominatorRight:Int):(Int, Int) = {
+  val denominatorProduct = denominatorRight * denominatorLeft
+  val leveledNumeratorLeft = numeratorLeft * denominatorRight
+  val leveldNumeratorRight = numeratorRight * denominatorLeft
+  (leveldNumeratorRight + leveledNumeratorLeft, denominatorProduct)
+}
+
+def reduceFractions(numerator:Int, denominator:Int):(Int, Int) = {
+  val gcdBoth = gcd(numerator, denominator)
+  (numerator / gcdBoth, denominator / gcdBoth)
+}
